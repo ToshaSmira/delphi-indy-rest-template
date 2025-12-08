@@ -1,0 +1,44 @@
+---
+description: Delphi coding conventions and naming standards
+globs: ['**/*.pas', '**/*.dpr', '**/*.dpk']
+alwaysApply: true
+---
+
+# Delphi Coding Conventions
+
+## Naming Conventions
+
+- **Types and Classes**: Use PascalCase
+  - Example: `TMyClass`, `TUserModel`, `TRequestHandler`
+
+- **Variables and Parameters**: Use camelCase
+  - Example: `userName`, `requestData`, `responseCode`
+
+- **Constants**: Use UPPER_SNAKE_CASE
+  - Example: `MAX_RETRY_COUNT`, `DEFAULT_TIMEOUT`
+
+- **Private Fields**: Prefix with `F`
+  - Example: `FUserName`, `FRequestHandler`
+
+- **Properties**: Use PascalCase without prefix
+  - Example: `UserName`, `IsActive`, `RequestHandler`
+
+- **Methods**: Use PascalCase for public methods, camelCase for private
+  - Public: `GetUserData()`, `ProcessRequest()`
+  - Private: `validateInput()`, `formatResponse()`
+
+## Code Style
+
+- Use meaningful names that describe purpose
+- Keep methods focused and single-purpose
+- Prefer composition over inheritance
+- Use `const` parameters when values should not be modified
+- Use `var` parameters only when modification is required
+- Initialize variables before use
+- Always free objects in `finally` blocks or use try-finally
+
+## Unit Structure
+
+- Interface section: types, constants, variables, function/procedure declarations
+- Implementation section: actual code
+- Use `uses` clause in implementation when possible to reduce dependencies

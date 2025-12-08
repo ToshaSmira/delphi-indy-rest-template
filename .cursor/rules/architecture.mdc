@@ -1,0 +1,46 @@
+---
+description: Client-server architecture principles and structure
+globs: ['**/*.pas', '**/*.dpr']
+alwaysApply: true
+---
+
+# Architecture Guidelines
+
+## Project Structure
+
+This project follows a client-server architecture with clear separation:
+
+- **Server**: Indy HTTP Server with REST API endpoints
+  - Located in `/server/src/`
+  - Handles HTTP requests and business logic
+  - Returns JSON responses
+
+- **Client**: Delphi VCL application
+  - Located in `/client/src/`
+  - Communicates with server via REST API
+  - Handles user interface and client-side logic
+
+- **Shared**: Common models and utilities
+  - Located in `/shared/`
+  - Contains shared data models (models.pas)
+  - Used by both client and server
+
+## Separation of Concerns
+
+- **Server**: Business logic, data processing, API endpoints
+- **Client**: UI logic, user interaction, data presentation
+- **Shared**: Data structures, common utilities, type definitions
+
+## Communication Pattern
+
+- Client sends HTTP requests to server endpoints
+- Server processes requests and returns JSON responses
+- Use standard HTTP methods: GET, POST, PUT, DELETE
+- All data exchange uses JSON format
+
+## Dependencies
+
+- Server should not depend on client code
+- Client depends on shared models
+- Shared code should be framework-agnostic
+- Avoid circular dependencies between units

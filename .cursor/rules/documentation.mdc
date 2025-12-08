@@ -1,0 +1,60 @@
+---
+description: Documentation requirements and standards
+globs: ['**/*.pas']
+alwaysApply: true
+---
+
+# Documentation Standards
+
+## Code Comments
+
+- Add comments in **English** for all public methods and classes
+- Explain **why**, not **what** (code should be self-explanatory)
+- Document complex algorithms and business logic
+- Include parameter descriptions for public methods
+
+## Class Documentation
+
+- Document the purpose of each class
+- Explain when and how to use the class
+- Document any important assumptions or constraints
+
+Example:
+```pascal
+  /// <summary>
+  /// Handles HTTP requests and routes them to appropriate endpoints
+  /// </summary>
+  TRequestHandler = class
+  end;
+```
+
+## Method Documentation
+
+- Document public and protected methods
+- Explain parameters and return values
+- Note any side effects or exceptions that may be raised
+- Include usage examples for complex methods
+
+Example:
+```pascal
+  /// <summary>
+  /// Processes user authentication request
+  /// </summary>
+  /// <param name="username">User login name</param>
+  /// <param name="password">User password</param>
+  /// <returns>Authentication token if successful, empty string otherwise</returns>
+  function AuthenticateUser(const username, password: string): string;
+```
+
+## Unit Documentation
+
+- Add unit-level comments explaining the purpose
+- Document dependencies and relationships with other units
+- Note any global state or initialization requirements
+
+## README and Project Documentation
+
+- Keep README.md up to date
+- Document setup instructions
+- Explain project structure
+- Include examples of common operations

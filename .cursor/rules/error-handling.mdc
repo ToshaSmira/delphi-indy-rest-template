@@ -1,0 +1,60 @@
+---
+description: Error handling and exception management guidelines
+globs: ['**/*.pas']
+alwaysApply: true
+---
+
+# Error Handling Guidelines
+
+## Exception Handling
+
+- Use try-except blocks for error handling
+- Always use try-finally for resource cleanup (objects, connections)
+- Catch specific exception types when possible
+- Don't catch exceptions just to ignore them
+
+## Resource Management
+
+- Always free objects in finally blocks:
+  ```pascal
+  obj := TMyObject.Create;
+  try
+    // use obj
+  finally
+    obj.Free;
+  end;
+  ```
+
+- Use `FreeAndNil()` when you need to check for nil after freeing
+
+## Error Propagation
+
+- Let exceptions propagate when appropriate
+- Don't swallow exceptions without logging
+- Log errors with sufficient context for debugging
+- Return meaningful error messages to API clients
+
+## Validation
+
+- Validate input at boundaries (API endpoints, public methods)
+- Fail fast on invalid input
+- Provide clear error messages indicating what went wrong
+
+## Logging
+
+- Log errors with appropriate severity levels
+- Include context: method name, parameters, stack trace if available
+- Don't log sensitive information (passwords, tokens, keys)
+
+## API Error Responses
+
+- Return structured error responses:
+  ```pascal
+  {
+    "success": false,
+    "error": "Error type or code",
+    "message": "Human-readable error message"
+  }
+  ```
+
+- Use appropriate HTTP status codes (400, 404, 500, etc.)

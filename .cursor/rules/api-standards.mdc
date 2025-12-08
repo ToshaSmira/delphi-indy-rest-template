@@ -1,0 +1,59 @@
+---
+description: REST API design standards and best practices
+globs: ['**/server/**/*.pas', '**/*api*.pas', '**/*endpoint*.pas']
+alwaysApply: true
+---
+
+# REST API Standards
+
+## Endpoint Design
+
+- Use clear, resource-based URLs
+  - Good: `/api/users`, `/api/users/{id}`, `/api/users/{id}/orders`
+  - Bad: `/api/getUser`, `/api/userData`
+
+- Follow RESTful conventions:
+  - GET: Retrieve data (no side effects)
+  - POST: Create new resources
+  - PUT: Update entire resource
+  - DELETE: Remove resource
+
+## Request/Response Format
+
+- **Request**: Accept JSON in request body for POST/PUT
+- **Response**: Always return JSON
+- Use consistent response structure:
+  ```pascal
+  {
+    "success": true/false,
+    "data": { ... },
+    "message": "optional message",
+    "error": "error details if failed"
+  }
+  ```
+
+## HTTP Status Codes
+
+- `200 OK`: Successful GET, PUT, DELETE
+- `201 Created`: Successful POST (resource created)
+- `400 Bad Request`: Invalid request data
+- `404 Not Found`: Resource not found
+- `500 Internal Server Error`: Server error
+
+## Error Handling
+
+- Always return appropriate HTTP status codes
+- Include error details in JSON response
+- Log errors on server side
+- Never expose internal error details to client
+
+## Content-Type
+
+- Set `Content-Type: application/json` for all JSON responses
+- Accept `Content-Type: application/json` for request bodies
+
+## Validation
+
+- Validate all input data before processing
+- Return clear validation error messages
+- Check required fields and data types

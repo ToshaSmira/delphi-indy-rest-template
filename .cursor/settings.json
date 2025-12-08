@@ -1,0 +1,39 @@
+{
+  "cursor.confirmBeforeEdit": false,
+  "cursor.confirmBeforeRun": false,
+  "cursor.confirmBeforeApply": false,
+  "telemetry.enableTelemetry": false,
+  "indexing.maxFiles": 1000,
+  "cursor.chat.sendCode": false,
+  "editor": {
+    "formatOnSave": true,
+    "codeActionsOnSave": {
+      "source.fixAll": true
+    }
+  },
+  "files": {
+    "exclude": {
+      "**/.git": true,
+      "**/.excluded": true
+    },
+    "watcherExclude": {
+      "**/.git/**": true,
+      "**/.excluded/**": true,
+      "**/__history/**": true,
+      "**/Win32/**": true,
+      "**/Win64/**": true,
+      "**/modules/**": true
+    }
+  },
+  "search": {
+    "exclude": {
+      "**/.excluded": true,
+      "**/.git": true,
+      "**/__history": true,
+      "**/Win32": true,
+      "**/Win64": true,
+      "**/modules": true
+    }
+  }
+}
+
