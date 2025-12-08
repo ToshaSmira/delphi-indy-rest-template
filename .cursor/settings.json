@@ -2,6 +2,8 @@
   "cursor.confirmBeforeEdit": false,
   "cursor.confirmBeforeRun": false,
   "cursor.confirmBeforeApply": false,
+  "cursor.terminal.confirmBeforeRun": false,
+  "cursor.commands.confirmBeforeRun": false,
   "telemetry.enableTelemetry": false,
   "indexing.maxFiles": 1000,
   "cursor.chat.sendCode": false,
